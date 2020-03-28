@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "Trebuchet": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Trebuchet"
+    }
+  },
+  "defaultProject": "Trebuchet",
+  "cli": {
+    "analytics": "59d5612f-3faf-401c-833a-e4c9710d639a"
+  }
 }
