@@ -14,7 +14,7 @@ body {
 }
 body, input[type="text"], button {
   color: #333;
-  font-family: "Trebuchet MS", Georgia;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 /* everywhere else */
 * {
