@@ -4,7 +4,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 
 
 export class WebsocketService {
-  private messages: Observable<Message>;
+  private readonly messages: Observable<Message>;
   private stompService: StompService;
 
   constructor(socketUrl: string, streamUrl: string) {

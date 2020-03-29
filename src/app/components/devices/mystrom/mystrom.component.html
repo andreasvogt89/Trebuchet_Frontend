@@ -1,0 +1,3 @@
+<div>
+<button class="buttonStromis" (click)="goToPage('devices/details', myStromData.deviceName)" *ngFor="let myStromData of mystromisButtonList">{{myStromData.deviceName}} <br> {{myStromData.temperature}} °C <br> {{myStromData.energy}} W</button>
+</div>

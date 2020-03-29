@@ -19,4 +19,8 @@ export class HttpDataService {
   get_list(deviceName: string) {
     return this.httpClient.get(this.baseUrl + '/list/' + deviceName);
   }
+
+  getSettings() {
+    return this.httpClient.get(this.baseUrl + '/settings');
+  }
 }
