@@ -5,6 +5,8 @@
   border-radius: 6px;
   font-size: 48px;
   text-align: center;
+  background-color: lightslategray;
+  border-color: lightslategray;
 }
 div{
   text-align: center;

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {MyStromData} from '../../components/models/myStromData';
 import {Observable} from 'rxjs';
+import {Settings} from '../../components/models/settings';
+import {catchError} from 'rxjs/operators';
 
 
 @Injectable()
@@ -23,4 +25,9 @@ export class HttpDataService {
   getSettings() {
     return this.httpClient.get(this.baseUrl + '/settings');
   }
+
+  setSettings(settings: Settings): Observable <Settings> {
+   return this.httpClient.post<Settings>(this.baseUrl + '/settings', settings);
+  }
+
 }

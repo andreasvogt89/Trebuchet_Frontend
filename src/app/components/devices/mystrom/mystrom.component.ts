@@ -15,6 +15,7 @@ export class MystromComponent implements OnInit {
   mystromisButtonList: MyStromData[];
   webSocketService: WebsocketService;
   state = 'NOT CONNECTED';
+  totalPower: number;
 
   constructor(private router: Router) {
   }
@@ -24,7 +25,7 @@ export class MystromComponent implements OnInit {
     // Subscribe to its stream (to listen on messages)
     this.webSocketService.stream().subscribe((message: Message) => {
       this.mystromisButtonList = JSON.parse(message.body);
-      console.log(message.body);
+      this.calculateTotalPower();
     });
 
     // Subscribe to its state (to know its connected or not)
@@ -35,5 +36,13 @@ export class MystromComponent implements OnInit {
 
   goToPage(pagename: string, parameter: string) {
     this.router.navigate([pagename, parameter]);
+  }
+
+  calculateTotalPower() {
+    this.totalPower = 0;
+    this.mystromisButtonList.forEach(x => {
+      this.totalPower = this.totalPower + x.power;
+      this.totalPower.toFixed(2);
+    });
   }
 }
