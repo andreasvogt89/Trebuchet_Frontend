@@ -3,12 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import {MyStromData} from '../../components/models/myStromData';
 import {Observable} from 'rxjs';
 import {Settings} from '../../components/models/settings';
-import {catchError} from 'rxjs/operators';
-
 
 @Injectable()
 export class HttpDataService {
-  baseUrl = 'http://trebuchet.ddns.net:8080';
+  baseUrl = 'https://trebuchet.ddns.net:8080';
 
   constructor(private httpClient: HttpClient) {
   }
