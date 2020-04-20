@@ -1,0 +1,10 @@
+<p>Temperatur & Leistungsverbrauch von den letzten
+  <label>
+    <input (keyup)="onKey($event)" (click)="onMouse($event)" type='number' value='{{settings.reportHours}}'>
+  </label> stunden Anzeigen
+</p>
+<div>
+<button (click)="setSettings()">Einstellungen Übernehmen</button>
+</div>
+
+
