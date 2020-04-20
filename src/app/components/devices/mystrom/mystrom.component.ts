@@ -21,7 +21,7 @@ export class MystromComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.webSocketService = new WebsocketService('ws://localhost:8080/ws/mystrom', '/broker/submystrom');
+    this.webSocketService = new WebsocketService('ws:trebuchet.ddns.net:8080/ws/mystrom', '/broker/submystrom');
     // Subscribe to its stream (to listen on messages)
     this.webSocketService.stream().subscribe((message: Message) => {
       this.mystromisButtonList = JSON.parse(message.body);
@@ -41,8 +41,7 @@ export class MystromComponent implements OnInit {
   calculateTotalPower() {
     this.totalPower = 0;
     this.mystromisButtonList.forEach(x => {
-      this.totalPower = this.totalPower + x.power;
-      this.totalPower.toFixed(2);
+      this.totalPower = Math.round((this.totalPower + x.power) * 100) / 100;
     });
   }
 }

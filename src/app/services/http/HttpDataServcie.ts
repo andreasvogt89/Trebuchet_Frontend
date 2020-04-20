@@ -8,7 +8,7 @@ import {catchError} from 'rxjs/operators';
 
 @Injectable()
 export class HttpDataService {
-  baseUrl = 'http://localhost:8080';
+  baseUrl = 'http://trebuchet.ddns.net:8080';
 
   constructor(private httpClient: HttpClient) {
   }
