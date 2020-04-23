@@ -21,7 +21,7 @@ export class MystromComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.webSocketService = new WebsocketService('wss:trebuchet.ddns.net:8080/ws/mystrom', '/broker/submystrom');
+    this.webSocketService = new WebsocketService('ws:192.168.1.220:8080/ws/mystrom', '/broker/submystrom');
     // Subscribe to its stream (to listen on messages)
     this.webSocketService.stream().subscribe((message: Message) => {
       this.mystromisButtonList = JSON.parse(message.body);

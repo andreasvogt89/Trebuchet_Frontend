@@ -6,7 +6,7 @@ import {Settings} from '../../components/models/settings';
 
 @Injectable()
 export class HttpDataService {
-  baseUrl = 'https://trebuchet.ddns.net:8080';
+  baseUrl = 'http://192.168.1.220:8080';
 
   constructor(private httpClient: HttpClient) {
   }
