@@ -1,11 +1,26 @@
 .header {
-  background: #333;
-  color: #fff;
+  background: rgba(95, 95, 95, 0.78);
+  border-radius: 5px;
   text-align: center;
-  padding: 10px;
+}
+.header h1{
+  padding-top: 5px;
+  background: -webkit-linear-gradient(-66deg, rgba(18, 104, 164, 0.87), rgba(255, 255, 255, 0.76));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header button {
+  padding: 8px;
+  background: rgba(193, 209, 240, 0.86);
+  color: #444444;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  margin: 5px;
 }
 
-.header a {
-  color: #fff;
-  text-decoration: none;
+.header button:hover{
+  background: #84aed5;
 }

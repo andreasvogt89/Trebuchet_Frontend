@@ -11,6 +11,7 @@ h2, h3 {
 }
 body {
   margin: 2em;
+  background: linear-gradient(-90deg, rgba(97, 129, 150, 0.87), rgba(182, 180, 180, 0.76));
 }
 body, input[type="text"], button {
   color: #333;
