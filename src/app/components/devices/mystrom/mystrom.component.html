@@ -1,5 +1,7 @@
 
 <h2>Gesamter Verbrauch: {{totalPower}} W</h2>
 <div>
-<button class="buttonStromis" (click)="goToPage('devices/details', myStromData.deviceName)" *ngFor="let myStromData of mystromisButtonList">{{myStromData.deviceName}} <br> {{myStromData.temperature}} °C <br> {{myStromData.power}} W</button>
+<button class="buttonStromis" (click)="goToPage('devices/details', myStromData.deviceName)" *ngFor="let myStromData of mystromisButtonList">
+  {{myStromData.deviceName}} <br> {{myStromData.temperature}} °C <br> {{myStromData.power}} W
+</button>
 </div>

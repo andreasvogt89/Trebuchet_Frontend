@@ -10,6 +10,8 @@ import {HttpDataService} from './services/http/HttpDataServcie';
 import { MystromdetailsComponent } from './components/devices/mystromdetails/mystromdetails.component';
 import { SettingsComponent } from './components/pages/settings/settings.component';
 import {HighchartsChartModule} from 'highcharts-angular';
+import { KrakenComponent } from './components/pages/kraken/kraken.component';
+
 
 @NgModule( {
   declarations: [
@@ -19,6 +21,7 @@ import {HighchartsChartModule} from 'highcharts-angular';
     AboutComponent,
     MystromdetailsComponent,
     SettingsComponent,
+    KrakenComponent,
   ],
   imports: [
     BrowserModule,

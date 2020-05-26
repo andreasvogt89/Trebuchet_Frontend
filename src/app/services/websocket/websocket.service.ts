@@ -38,6 +38,10 @@ export class WebsocketService {
     return this.stompService.publish(url, JSON.stringify(message));
   }
 
+  public disconnect() {
+    this.stompService.disconnect();
+  }
+
   public state(): BehaviorSubject<StompState> {
     return this.stompService.state;
   }

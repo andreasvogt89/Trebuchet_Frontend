@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {MyStromData} from '../../components/models/myStromData';
 import {Observable} from 'rxjs';
 import {Settings} from '../../components/models/settings';
@@ -10,10 +10,13 @@ export class HttpDataService {
 
   constructor(private httpClient: HttpClient) {
   }
-
   // Get amount of devices and infos
   get_devices(): Observable<MyStromData[]> {
     return this.httpClient.get<MyStromData[]>(this.baseUrl + '/ms');
+  }
+
+  get_Kraken_info() {
+  return this.httpClient.get('http://192.168.1.220:5000/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account=Andreas&passwd=4556@A89xy$$&session=FileStation&format=cookie');
   }
 
   get_list(deviceName: string) {
@@ -22,6 +25,10 @@ export class HttpDataService {
 
   getSettings() {
     return this.httpClient.get(this.baseUrl + '/settings');
+  }
+
+  getAverageValues(deviceName: string) {
+    return this.httpClient.get(this.baseUrl + '/' + deviceName + '/calc');
   }
 
   setSettings(settings: Settings): Observable <Settings> {
