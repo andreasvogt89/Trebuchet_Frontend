@@ -1,13 +1,20 @@
 .buttonStromis {
-  padding: 0 6px 0 6px;
-  margin: 18px 6px 6px 18px;
-  min-width: 500px;
-  border-radius: 6px;
-  font-size: 48px;
+  min-width: 200px;
+  min-height: 100px;
+  font-size: large;
+  background: rgba(193, 209, 240, 0.86);
+  color: #444444;
   text-align: center;
-  background-color: lightslategray;
-  border-color: lightslategray;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  margin: 5px;
 }
+.buttonStromis:hover{
+  background: #84aed5;
+}
+
 div{
   text-align: center;
 }

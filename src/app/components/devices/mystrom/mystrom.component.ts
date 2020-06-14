@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MyStromData} from '../../models/myStromData';
 import {WebsocketService} from '../../../services/websocket/websocket.service';
 import {Message} from '@stomp/stompjs';
 import {StompState} from '@stomp/ng2-stompjs';
 import {Router} from '@angular/router';
+import {HttpDataService} from '../../../services/http/HttpDataServcie';
+
+
 
 
 @Component({
@@ -11,13 +14,13 @@ import {Router} from '@angular/router';
   templateUrl: './mystrom.component.html',
   styleUrls: ['./mystrom.component.css']
 })
-export class MystromComponent implements OnInit {
+export class MystromComponent implements OnInit, OnDestroy {
   mystromisButtonList: MyStromData[];
   webSocketService: WebsocketService;
   state = 'NOT CONNECTED';
   totalPower: number;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private httpDataService: HttpDataService) {
   }
 
   ngOnInit(): void {
@@ -32,6 +35,7 @@ export class MystromComponent implements OnInit {
     this.webSocketService.state().subscribe((state: StompState) => {
       this.state = StompState[state];
     });
+
   }
 
   goToPage(pagename: string, parameter: string) {
@@ -43,5 +47,9 @@ export class MystromComponent implements OnInit {
     this.mystromisButtonList.forEach(x => {
       this.totalPower = Math.round((this.totalPower + x.power) * 100) / 100;
     });
+  }
+
+  ngOnDestroy(): void {
+    this.webSocketService.disconnect();
   }
 }
