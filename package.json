@@ -28,7 +28,7 @@
     "canvasjs": "^1.8.3",
     "chart.js": "^2.9.3",
     "crypto": "^1.0.1",
-    "highcharts": "^8.0.4",
+    "highcharts": "^8.1.1",
     "highcharts-angular": "^2.4.0",
     "install": "^0.13.0",
     "net": "^1.0.2",
